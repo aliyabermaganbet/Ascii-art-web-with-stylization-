@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        form {text-align: center;}
+        body {
+	position: relative;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient(to bottom,  rgba(255,168,76,0.6) 0%,rgba(255,123,13,0.6) 100%), url('https://images.unsplash.com/photo-1446824505046-e43605ffb17f');
+	background-blend-mode: soft-light;
+	background-size: auto;
+	background-position: center center;
+	padding: 2rem;
+    font-family: Verdana;
+    margin: 0;
+    background-repeat: no-repeat;
+        }
+        textarea {
+            width:90%;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            background-color:bisque;
+           overflow: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        
+        input[type = "submit"]{
+         text-align: center;
+         font-weight: bold;
+        }
+       
+        input[type = "reset"]{
+           text-align: center;
+           font-weight: bold;
+
+        }
+   select {
+    display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto;
+     background-color:bisque;
+     text-align: center;
+   }
+   .container{
+	display: block;
+    text-align: center;
+    margin: 0;
+
+    overflow: auto;
+    color:bisque;
+    text-shadow:rgb(209, 196, 178);
+}   
+textarea{
+    width: 80%;
+    max-width: 700px;
+    resize: none;
+}
+    </style>
+</head>
+<body>
+    <form action = "/result" method = "post">
+    <h1>Welcome to Ascii-art-web</h1>
+    <textarea name = "inserttext" required  style="width: 80%; height: 200px;font-family:verdana" placeholder="Please, insert your text.."></textarea>
+    <br></br>
+    <label style="font-weight: bold">Choose:</label>
+    <select id = "textstyle" name = "textstyle">
+        <option value = "standard">standard</option>
+        <option value = "shadow">shadow</option>
+        <option value = "thinkertoy">thinkertoy</option>
+    </select>
+    <br></br>
+    <input type="submit" value ="Submit" style = "background-color: bisque;"/>
+    <input type="reset" value ="Reset"style = "background-color: bisque;"/>
+</form>
+<div class = "container">
+   <pre>{{ .Name}}</pre>
+</div>
+</body>
+</html>
